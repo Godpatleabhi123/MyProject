@@ -1,1 +1,31 @@
-kdshfshdkfhksdh
+package com.launchbrowser;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+
+public class Launchchrome {
+
+	public static void main(String[] args) throws InterruptedException{
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\exam\\Desktop\\selenium\\geckodriver\\geckodriver.exe");
+		
+		WebDriver driver = new FirefoxDriver();
+		
+		driver.get("https://www.facebook.com/");
+		//driver.findElement(By.id("APJFqb")).sendKeys("https://www.facebook.com/");
+		driver.manage().window().minimize();
+		driver.manage().window().maximize();
+		driver.findElement(By.id("email")).sendKeys("ameya.vaidya98@gmail.com");
+		Thread.sleep(2000);
+		driver.findElement(By.name("pass")).sendKeys("Swamiiiii@12345");
+		Thread.sleep(2000);
+		driver.findElement(By.name("login")).click();
+		driver.close();
+		System.out.print("success");
+		
+
+	}
+
+}
